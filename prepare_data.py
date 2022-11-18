@@ -69,7 +69,7 @@ if not os.path.isdir("data"):
     
 else:
     data = dvc.api.read(
-    'data/Seinfeld_Scripts.txt',
+    'data/Seinfeld_Scripts.txt.dvc',
     repo='https://github.com/Abdulrahman-Almutlaq/RNN',
     mode='rb')
     print(data,"=========================================")
