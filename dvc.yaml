@@ -1,0 +1,28 @@
+stages:
+  prepare_data:
+    cmd: python prepare_data.py
+    deps:
+    - ./data/Seinfeld_Scripts.txt
+    - helper.py
+    - prepare_data.py
+  train:
+    cmd: python train.py
+    deps:
+    - ./data/Seinfeld_Scripts.txt
+    - prepare_data.py
+    - train.py
+    outs:
+    - params.yaml
+    metrics:
+    - metrics.json:
+        cache: false
+  generate:
+    cmd: python generate.py
+    deps:
+    - ./data/Seinfeld_Scripts.txt
+    - helper.py
+    - models/RNN
+    - prepare_data.py
+    - generate.py
+    outs:
+    - generated_script.txt

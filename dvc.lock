@@ -1,0 +1,55 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python train.py
+    deps:
+    - path: ./data/Seinfeld_Scripts.txt
+      md5: 788535d7101cbb955de28c247b1785fb
+      size: 3471475
+    - path: prepare_data.py
+      md5: 5cbf547efa400afb92f9f615366fc147
+      size: 2278
+    - path: train.py
+      md5: a1d87c0734e7f9265941592c98415d43
+      size: 8574
+    outs:
+    - path: metrics.json
+      md5: 8d08fe3d3a9512dc20178175acdfc292
+      size: 40
+    - path: params.yaml
+      md5: ba90c244293362eb23be2709f695fdb2
+      size: 304
+  generate:
+    cmd: python generate.py
+    deps:
+    - path: ./data/Seinfeld_Scripts.txt
+      md5: 788535d7101cbb955de28c247b1785fb
+      size: 3471475
+    - path: generate.py
+      md5: 357a16a83b02707504e3c7f1de51b4e8
+      size: 3074
+    - path: helper.py
+      md5: 48ea468cd1d12622ac48a63818661cfd
+      size: 1407
+    - path: models/RNN
+      md5: 93af956ef0211e74da9cf68d8e6dc89c
+      size: 25739999
+    - path: prepare_data.py
+      md5: 5cbf547efa400afb92f9f615366fc147
+      size: 2278
+    outs:
+    - path: generated_script.txt
+      md5: 191e89fd9339125fe602878115b758cc
+      size: 3028
+  prepare_data:
+    cmd: python prepare_data.py
+    deps:
+    - path: ./data/Seinfeld_Scripts.txt
+      md5: 788535d7101cbb955de28c247b1785fb
+      size: 3471475
+    - path: helper.py
+      md5: 48ea468cd1d12622ac48a63818661cfd
+      size: 1407
+    - path: prepare_data.py
+      md5: 5cbf547efa400afb92f9f615366fc147
+      size: 2278
