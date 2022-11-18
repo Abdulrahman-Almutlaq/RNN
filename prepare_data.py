@@ -4,6 +4,7 @@ import torch
 from torch.utils.data import TensorDataset, DataLoader
 import dvc.api
 import os
+import pickle
 
 def create_lookup_tables(text):
     """
@@ -59,14 +60,20 @@ def batch_data(words, sequence_length, batch_size):
     dataloader = DataLoader(data, batch_size=batch_size, shuffle=True)
      # return a dataloader
     return dataloader
+
 if not os.path.isdir("data"):
     data_dir = './data/Seinfeld_Scripts.txt'
+    text = helper.load_data(data_dir)
+    helper.preprocess_and_save_data(data_dir, token_lookup, create_lookup_tables)
+    int_text, vocab_to_int, int_to_vocab, token_dict = helper.load_preprocess()
+    
 else:
-    with dvc.api.open('data/Seinfeld_Scripts.txt',repo='https://github.com/Abdulrahman-Almutlaq/RNN', mode='rb') as dvc_f:
-        data_dir = helper.load_data('data/Seinfeld_Scripts.txt')
+    data = dvc.api.read(
+    'data/Seinfeld_Scripts.txt',
+    repo='https://github.com/Abdulrahman-Almutlaq/RNN',
+    mode='rb')
+    print(data,"=========================================")
+    text = pickle.loads(data)
 
 
-text = helper.load_data(data_dir)
-helper.preprocess_and_save_data(data_dir, token_lookup, create_lookup_tables)
-int_text, vocab_to_int, int_to_vocab, token_dict = helper.load_preprocess()
 
