@@ -2,7 +2,6 @@ stages:
   prepare_data:
     cmd: python prepare_data.py
     deps:
-    - ./data/Seinfeld_Scripts.txt
     - helper.py
     - prepare_data.py
   train:
