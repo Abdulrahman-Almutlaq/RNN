@@ -1,0 +1,4 @@
+mlem==0.3.0
+numpy==1.21.5
+PyYAML==6.0
+torch==1.12.1
