@@ -60,7 +60,7 @@ def batch_data(words, sequence_length, batch_size):
     dataloader = DataLoader(data, batch_size=batch_size, shuffle=True)
      # return a dataloader
     return dataloader
-
+print("YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
 data_dir = './data/Seinfeld_Scripts.txt'
 text = helper.load_data(data_dir)
 helper.preprocess_and_save_data(data_dir, token_lookup, create_lookup_tables)
