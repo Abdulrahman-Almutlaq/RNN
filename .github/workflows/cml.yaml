@@ -12,6 +12,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.SOME_SECRET }}
         run: |
+          pip3 install --upgrade pip
           pip install -r requirements.txt
           dvc remote modify storage url gdrive://root/1R6YWU6OBQL_c3wrMcsV1-keyuLE8eqtc
           dvc remote modify storage --local gdrive_use_service_account true
