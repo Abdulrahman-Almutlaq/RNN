@@ -14,7 +14,7 @@ jobs:
           pip3 install --upgrade pip
           pip install -r requirements.txt
           dvc remote modify storage url gdrive://root/1R6YWU6OBQL_c3wrMcsV1-keyuLE8eqtc
-          dvc remote modify --local gdrive_use_service_account true
+          dvc remote modify storage --local gdrive_use_service_account true
           gdrive_user_credentials_file: ${{ secrets.SOME_SECRET }}
           dvc pull
           dvc repro
