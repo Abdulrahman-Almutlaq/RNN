@@ -199,7 +199,7 @@ train_loader = batch_data(int_text, sequence_length, batch_size)
 # Number of Epochs
 num_epochs = 1
 # Learning Rate
-learning_rate = 0.01
+learning_rate = 0.1
 
 # Model parameters
 # Vocab size
