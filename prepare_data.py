@@ -61,19 +61,11 @@ def batch_data(words, sequence_length, batch_size):
      # return a dataloader
     return dataloader
 
-if not os.path.isdir("data"):
-    data_dir = './data/Seinfeld_Scripts.txt'
-    text = helper.load_data(data_dir)
-    helper.preprocess_and_save_data(data_dir, token_lookup, create_lookup_tables)
-    int_text, vocab_to_int, int_to_vocab, token_dict = helper.load_preprocess()
-    
-else:
-    data = dvc.api.read(
-    'data/Seinfeld_Scripts.txt',
-    repo='https://github.com/Abdulrahman-Almutlaq/RNN',
-    mode='rb')
-    print(data,"=========================================")
-    text = pickle.loads(data)
+data_dir = './data/Seinfeld_Scripts.txt'
+text = helper.load_data(data_dir)
+helper.preprocess_and_save_data(data_dir, token_lookup, create_lookup_tables)
+int_text, vocab_to_int, int_to_vocab, token_dict = helper.load_preprocess()
+
 
 
 
