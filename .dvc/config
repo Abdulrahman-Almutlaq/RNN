@@ -4,4 +4,5 @@
     url = gdrive://root/1R6YWU6OBQL_c3wrMcsV1-keyuLE8eqtc
     gdrive_use_service_account = true
     gdrive_service_account_user_email = almotlaq.abdulrahman@gmail.com
-    gdrive_client_id = 111434272603048975244
+    gdrive_client_id = 1052313312920-8l22icj7ps7p0c4s66k7kjhsgom2886o.apps.googleusercontent.com
+    gdrive_client_secret = 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
