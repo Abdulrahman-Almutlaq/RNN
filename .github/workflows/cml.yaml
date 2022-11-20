@@ -10,7 +10,6 @@ jobs:
       - name: Train model
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GDRIVE_CREDENTIALS_DATA: ${{ secrets.SOME_SECRET }}
           LC_ALL: en_US.UTF-8
           LANG: en_US.UTF-8
         run: |
