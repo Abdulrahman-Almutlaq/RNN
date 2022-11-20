@@ -2,3 +2,5 @@
     remote = storage
 ['remote "storage"']
     url = gdrive://1R6YWU6OBQL_c3wrMcsV1-keyuLE8eqtc/78/8535d7101cbb955de28c247b1785fb
+    gdrive_use_service_account = true
+    gdrive_service_account_user_email = almotlaq.abdulrahman@gmail.com
