@@ -14,7 +14,6 @@ jobs:
         run: |
           pip3 install --upgrade pip
           pip install -r requirements.txt
-          dvc remote add -d storage gdrive://1R6YWU6OBQL_c3wrMcsV1-keyuLE8eqtc
           dvc pull
           dvc repro
           git fetch
